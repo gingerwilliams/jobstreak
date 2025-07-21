@@ -1,0 +1,29 @@
+export default {
+  manifest_version: 3,
+  name: 'JobStreak',
+  description: 'Track and manage your job applications directly from job boards.',
+  version: '0.1',
+  permissions: [
+    'storage',
+    'tabs',
+    'activeTab',
+    'scripting',
+    'contextMenus'
+  ],
+  host_permissions: ['<all_urls>'],
+  action: {
+    default_popup: 'index.html',
+    default_icon: 'icon.png',
+  },
+  background: {
+    service_worker: 'src/background.js',
+    type: 'module',
+  },
+  content_scripts: [
+    {
+      matches: ['*://*.linkedin.com/*', '*://*.indeed.com/*'],
+      js: ['src/contentScript.js'],
+      run_at: 'document_idle',
+    },
+  ],
+};
