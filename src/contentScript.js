@@ -23,8 +23,6 @@ function captureJobListings() {
 			});
     	});
   	}
-
-  	console.log("jobs:: ", jobs)
 }
 
 // "Save Job to JobStreak" sent messege

@@ -6,6 +6,8 @@ import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-mod
 // import "ag-grid-community/styles/ag-grid.css";
 // import "ag-grid-community/styles/ag-theme-alpine.css";
 import { Columns } from "./config";
+import icon from "./assets/JobStreak_Logo.png";
+import './App.css'
 
 function App() {
 	const [jobs, setJobs] = useState([]);
@@ -50,15 +52,18 @@ function App() {
 	}, []);
 
 	return (
-		<div style={{ width: "800px", height: "500px", fontFamily: "sans-serif" }}>
-			<header><span><img src="/assets/icon.png" alt="briefcase icon" /></span><h1>JobStreak</h1></header>
-			<h2>Saved Jobs: {jobs.length}</h2>
-			<button onClick={handleClearJobs} style={{ marginBottom: "10px", marginRight: 10 }}>
-				Clear All Jobs
-			</button>
-			<button onClick={handleExport} style={{ marginBottom: "10px" }}>
-				Export to Excel
-			</button>
+		<div className="window">
+			<header>
+				<span><img src={icon} alt="JobStreak Logo" style={{ height: 35, marginRight: 8 }}/></span>
+			</header>
+			
+			<div className="controls-row">
+				<div className="buttons">
+					<button onClick={handleClearJobs}>Clear All Jobs</button>
+					<button onClick={handleExport}>Export to Excel</button>
+				</div>
+				<h3>Saved Jobs: {jobs.length}</h3>
+			</div>
 			<div className="ag-theme-alpine" style={{ height: 400, width: "100%" }}>
 				<AgGridReact
 					rowData={jobs}

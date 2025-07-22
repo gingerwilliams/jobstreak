@@ -9,7 +9,6 @@ export const linkedIn = () => {
         const jobSelector = '.job-card-job-posting-card-wrapper__card-link';
     
         return Array.from(document.querySelectorAll(jobSelector)).map((el) => {
-            console.log("SR el:: ", el)
             const jobTypeText = el.innerText;
             // const isMatch = jobTypeFilter.some(type => jobTypeText.includes(type));
             // if (!isMatch) return;
@@ -19,7 +18,6 @@ export const linkedIn = () => {
             const location = el.querySelector('.artdeco-entity-lockup__caption > div')?.innerText.trim() ?? 'No location';
             const id = getParams(el.href);
             const createdAt = new Date(Date.now()).toLocaleString()
-            console.log("title:: ", createdAt)
 
             return {
                 id,
@@ -35,7 +33,6 @@ export const linkedIn = () => {
         const jobSelector = '.job-card-container';
 
         return Array.from(document.querySelectorAll(jobSelector)).map((el) => {
-            console.log("COL el:: ", el)
             const jobTypeText = el.innerText;
             // const isMatch = jobTypeFilter.some(type => jobTypeText.includes(type));
             // if (!isMatch) return;
@@ -45,7 +42,6 @@ export const linkedIn = () => {
             const location = el.querySelector('.artdeco-entity-lockup__caption span')?.innerText.trim() ?? 'No location';
             const id = el.getAttribute("data-job-id")
             const createdAt = new Date(Date.now()).toLocaleString()
-            console.log("title:: ", id)
 
             return {
                 id,
