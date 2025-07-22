@@ -5,6 +5,7 @@ const { LI, LI_SEARCH_RESULTS, LI_COLLECTIONS } = Constants;
 const jobTypeFilter = ['Remote', "On-site", "Hybrid", ]; // Customize this
 
 export const linkedIn = () => {
+    console.log("linkedIn board executed")
     if (window.document.location.pathname === LI_SEARCH_RESULTS) {
         const jobSelector = '.job-card-job-posting-card-wrapper__card-link';
     

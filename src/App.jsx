@@ -55,15 +55,13 @@ function App() {
 		<div className="window">
 			<header>
 				<span><img src={icon} alt="JobStreak Logo" style={{ height: 35, marginRight: 8 }}/></span>
-			</header>
-			
-			<div className="controls-row">
 				<div className="buttons">
 					<button onClick={handleClearJobs}>Clear All Jobs</button>
 					<button onClick={handleExport}>Export to Excel</button>
 				</div>
-				<h3>Saved Jobs: {jobs.length}</h3>
-			</div>
+			</header>
+			
+			<div className="info"><span className="totals">Saved Jobs: {jobs.length}</span></div>
 			<div className="ag-theme-alpine" style={{ height: 400, width: "100%" }}>
 				<AgGridReact
 					rowData={jobs}

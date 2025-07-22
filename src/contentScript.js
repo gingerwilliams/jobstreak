@@ -1,4 +1,6 @@
-import { linkedIn } from "./board/linkedIn";
+// import { linkedIn } from "./board/linkedIn";
+// import { indeed } from "./board/indeed";
+import { jobBoard } from "./board/index.js";
 
 console.log("JobStreak content script loaded");
 
@@ -8,8 +10,9 @@ console.log("JobStreak content script loaded");
 function captureJobListings() {
   	console.log("captureJobListings executed")
 
-  	const jobs = linkedIn() // switch object for job boards
-
+  	const board = jobBoard() // switch object for job boards
+	const jobs = board() || []
+	
   	if (jobs.length > 0) {
     	chrome.storage.local.get(['jobStreak'], (result) => {
       		const existing = result.jobStreak || [];

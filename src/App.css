@@ -1,5 +1,5 @@
 /* Container layout */
-.window {
+#JobStreak .window {
   width: 800px;
   height: 500px;
   display: flex;
@@ -10,27 +10,32 @@
 }
 
 /* Header area (if needed) */
-header {
+#JobStreak header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-/* Controls + counter in row */
-.controls-row {
+#JobStreak header .buttons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
-.controls-row .buttons {
+#JobStreak .info {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 /* Ensure the Saved Jobs text doesn't wrap */
-.controls-row h3 {
-  margin: 0;
+#JobStreak .totals {
+  font-size: 10px;
+  margin-right: 15px;
   white-space: nowrap;
+  color: #c8c8c8;
 }

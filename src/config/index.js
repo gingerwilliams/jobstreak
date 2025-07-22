@@ -27,6 +27,7 @@ export const Columns = [
         field: "type", 
         colId: "type", 
         type: "textColumn",
+        width: 80,
         flex: 1 
     },
     {
@@ -34,6 +35,7 @@ export const Columns = [
         field: "url",
         colId: "url",
         type: "textColumn",
+        width: 115,
         cellRenderer
     },
     { 
