@@ -10,7 +10,10 @@ export default {
     'scripting',
     'contextMenus'
   ],
-  host_permissions: ['<all_urls>'],
+  host_permissions: [
+    'https://*.linkedin.com/*',
+    'https://*.indeed.com/*'
+  ],
   action: {
     default_popup: 'index.html',
     default_icon: 'icon.png',

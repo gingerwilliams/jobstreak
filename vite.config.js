@@ -13,7 +13,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: 'index.html',
-        content: 'src/contentScript.js', // ✅ Make sure this path exists
+        content: 'src/contentScript.js',
       },
       output: {
         entryFileNames: '[name].js'

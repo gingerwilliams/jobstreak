@@ -22,6 +22,12 @@
   flex-grow: 1;
   gap: 10px;
   justify-content: flex-end;
+  cursor: pointer;
+}
+
+#JobStreak header .buttons .donate-button {
+  background-color: #ffcc00;
+  color: #222222;
 }
 
 #JobStreak .info {

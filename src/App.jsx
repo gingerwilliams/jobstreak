@@ -53,6 +53,11 @@ function App() {
 				<div className="buttons">
 					<button onClick={handleClearJobs}>Clear All Jobs</button>
 					<button onClick={handleExport}>Export to Excel</button>
+					<button
+						className="donate-button"
+						onClick={() => window.open("https://cash.app/$stardust151", "_blank")}					>
+						☕ Donate
+					</button>
 				</div>
 			</header>
 			
