@@ -10,12 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ag-grid-community/client-side-row-model": "^32.3.5",
-    "@ag-grid-enterprise/core": "^32.3.5",
     "@crxjs/vite-plugin": "^2.0.3",
-    "ag-grid-community": "^32.3.5",
-    "ag-grid-enterprise": "^32.3.5",
-    "ag-grid-react": "^32.3.5",
+    "ag-grid-community": "^34.0.2",
+    "ag-grid-react": "^34.0.2",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

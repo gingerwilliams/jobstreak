@@ -2,18 +2,15 @@
 import { useEffect, useState, useCallback } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { colorSchemeDarkWarm, themeQuartz } from "ag-grid-community";
-import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
-// import "ag-grid-community/styles/ag-grid.css";
-// import "ag-grid-community/styles/ag-theme-alpine.css";
 import { Columns } from "./config";
 import icon from "./assets/JobStreak_Logo.png";
 import './App.css'
+import onExport from "./utils/exportFile";
 
 function App() {
 	const [jobs, setJobs] = useState([]);
 	const [gridApi, setGridApi] = useState(null);
 
-	const modules = [ClientSideRowModelModule];
 
 	const myTheme = themeQuartz
 		.withPart(colorSchemeDarkWarm)
@@ -33,11 +30,9 @@ function App() {
 		});
 	};
 
-	const handleExport = useCallback(() => {
+	const handleExport = useCallback(async () => {
 		if (gridApi) {
-			gridApi.exportDataAsExcel({
-				fileName: "jobstreak_saved_jobs.xlsx"
-			});
+			await onExport(gridApi);
 		}
 	}, [gridApi]);
 
@@ -68,7 +63,6 @@ function App() {
 					columnDefs={Columns}
 					onGridReady={onGridReady}
 					theme={myTheme}
-					modules={modules}
 					//   defaultColDef={{ resizable: true, sortable: true, filter: true }}
 					domLayout="autoHeight"
 				/>

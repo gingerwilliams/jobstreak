@@ -14,7 +14,12 @@ export default defineConfig({
       input: {
         popup: 'index.html',
         content: 'src/contentScript.js', // ✅ Make sure this path exists
+      },
+      output: {
+        entryFileNames: '[name].js'
       }
-    }
+    },
+    outDir: 'dist',
+    emptyOutDir: true,
   }
 })
