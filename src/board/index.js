@@ -1,5 +1,11 @@
 import { indeed } from "./indeed";
 import { linkedIn } from "./linkedIn";
+/**
+ * Glassdoor
+ * ZipRecruiter
+ * Robert Half
+ * @returns 
+ */
 
 
 export const jobBoard = () => {

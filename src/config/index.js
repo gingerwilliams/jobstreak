@@ -1,6 +1,13 @@
-import { cellRenderer } from "./cellRenderer"
+import { buttonRenderer, linkRenderer } from "./cellRenderer"
 
 export const Columns = [
+    {
+        headerName: "Actions",
+        field: "id",
+        cellRenderer: buttonRenderer,
+        width: 100,
+        suppressMovable: true,
+    },
     { 
         headerName: "Title", 
         field: "title", 
@@ -36,7 +43,7 @@ export const Columns = [
         colId: "url",
         type: "textColumn",
         width: 115,
-        cellRenderer
+        cellRenderer: linkRenderer
     },
     { 
         headerName: "Saved At", 
