@@ -1,4 +1,5 @@
 import Constants from "../constants/index.js";
+import { createDate } from "../utils/index.js";
 
 const { INDEED, INDEED_L, INDEED_Q, INDEED_JOBSEEKER, INDEED_JOBS_L, INDEED_JOBS_Q } = Constants;
 
@@ -25,14 +26,16 @@ export const indeed = () => {
             const company = el.querySelector('.company_location span')?.innerText.trim() ?? 'No company';
             const location = el.querySelector(`.company_location div div[data-testid]`)?.innerText.trim() ?? 'No location';
             const id = el.querySelector("a").getAttribute("id")
-            const createdAt = new Date(Date.now()).toLocaleString()
+            const createdAt = createDate()
             const pathname = el.querySelector("a").getAttribute("href")
+            const status = "saved"
 
             return {
                 id,
                 title,
                 createdAt,
                 company,
+                status,
                 location,
                 type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? 'On-Site',
                 url: INDEED + pathname.slice(1)

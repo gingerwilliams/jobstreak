@@ -5,7 +5,7 @@ export const linkRenderer = (params) => {
     return (
         <a href={params.value} target="_blank">
             {/* {new URL(params.value).hostname}  */}
-            View Listing
+            View
         </a>
     );
 };

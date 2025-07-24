@@ -5,7 +5,7 @@ export const Columns = [
         headerName: "Actions",
         field: "id",
         cellRenderer: buttonRenderer,
-        width: 100,
+        width: 70,
         suppressMovable: true,
     },
     { 
@@ -37,13 +37,14 @@ export const Columns = [
         width: 80,
         flex: 1 
     },
-    {
-        headerName: "URL",
-        field: "url",
-        colId: "url",
+    { 
+        headerName: "Status", 
+        field: "status", 
+        colId: "status", 
         type: "textColumn",
-        width: 115,
-        cellRenderer: linkRenderer
+        editable: true,
+        width: 80,
+        flex: 1 
     },
     { 
         headerName: "Saved At", 
@@ -51,5 +52,13 @@ export const Columns = [
         colId: "createdAt",
         type: "dateColumn", 
         flex: 1 
-    }
+    },
+    {
+        headerName: "URL",
+        field: "url",
+        colId: "url",
+        type: "textColumn",
+        width: 70,
+        cellRenderer: linkRenderer
+    },
 ]

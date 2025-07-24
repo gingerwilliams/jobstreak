@@ -1,4 +1,5 @@
 import Constants from "../constants/index.js";
+import { createDate } from "../utils/index.js";
 
 const { LI, LI_SEARCH_RESULTS, LI_COLLECTIONS } = Constants;
 
@@ -18,12 +19,14 @@ export const linkedIn = () => {
             const company = el.querySelector('.artdeco-entity-lockup__subtitle > div')?.innerText.trim() ?? 'No company';
             const location = el.querySelector('.artdeco-entity-lockup__caption > div')?.innerText.trim() ?? 'No location';
             const id = getParams(el.href);
-            const createdAt = new Date(Date.now()).toLocaleString()
+            const createdAt = createDate()
+            const status = "saved"
 
             return {
                 id,
                 title,
                 createdAt,
+                status,
                 company,
                 location,
                 type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? 'Unknown',
@@ -42,13 +45,15 @@ export const linkedIn = () => {
             const company = el.querySelector('.artdeco-entity-lockup__subtitle > span')?.innerText.trim() ?? 'No company';
             const location = el.querySelector('.artdeco-entity-lockup__caption span')?.innerText.trim() ?? 'No location';
             const id = el.getAttribute("data-job-id")
-            const createdAt = new Date(Date.now()).toLocaleString()
+            const createdAt = createDate
+            const status = "saved"
 
             return {
                 id,
                 title,
                 company,
                 createdAt,
+                status,
                 location,
                 type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? 'Unknown',
                 url: LI + "/jobs/view/" + id
