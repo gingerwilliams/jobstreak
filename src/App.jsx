@@ -25,8 +25,8 @@ function App() {
 
 	const handleClearJobs = () => {
 		chrome.storage.local.remove("jobStreak", () => {
-		setJobs([]);
-		console.log("All jobs cleared");
+			setJobs([]);
+			console.log("All jobs cleared");
 		});
 	};
 

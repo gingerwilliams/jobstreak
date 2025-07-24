@@ -2,7 +2,7 @@ export default {
   manifest_version: 3,
   name: 'JobStreak',
   description: 'Track and manage your job applications directly from job boards.',
-  version: '0.1',
+  version: '1.1',
   permissions: [
     'storage',
     'tabs',
