@@ -26,9 +26,10 @@ export const indeed = () => {
             const company = el.querySelector('.company_location span')?.innerText.trim() ?? 'No company';
             const location = el.querySelector(`.company_location div div[data-testid]`)?.innerText.trim() ?? 'No location';
             const id = el.querySelector("a").getAttribute("id")
-            const createdAt = createDate()
             const pathname = el.querySelector("a").getAttribute("href")
-            const status = "saved"
+            const url = INDEED + pathname.slice(1);
+            const createdAt = createDate() // remove
+            const status = "saved" // remove
 
             return {
                 id,
@@ -37,8 +38,8 @@ export const indeed = () => {
                 company,
                 status,
                 location,
-                type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? 'On-Site',
-                url: INDEED + pathname.slice(1)
+                url,
+                type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? '',
             };
         });
     }

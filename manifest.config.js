@@ -7,12 +7,12 @@ export default {
     'storage',
     'tabs',
     'activeTab',
-    'scripting',
     'contextMenus'
   ],
   host_permissions: [
     'https://*.linkedin.com/*',
-    'https://*.indeed.com/*'
+    'https://*.indeed.com/*',
+    'https://*.glassdoor.com/*'
   ],
   action: {
     default_popup: 'index.html',
@@ -24,7 +24,7 @@ export default {
   },
   content_scripts: [
     {
-      matches: ['*://*.linkedin.com/*', '*://*.indeed.com/*'],
+      matches: ['*://*.linkedin.com/*', '*://*.indeed.com/*', '*://*.glassdoor.com/*'],
       js: ['src/contentScript.js'],
       run_at: 'document_idle',
     },

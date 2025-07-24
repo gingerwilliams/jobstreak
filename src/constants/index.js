@@ -10,7 +10,9 @@ const Constants =  {
     INDEED_JOBS_Q: "jobs?q=",
     INDEED_JOBS_L: "jobs?l=",
     INDEED_JOBSEEKER: "?from=gnav",
-    
+
+    GD: "https://www.glassdoor.com",
+    GD_JOBS: "/Job/",
     //entitlement
     // NDF_ADMIN_ENTITLEMENT = "NDF_BLOTTER_ADMIN",
     
@@ -27,4 +29,5 @@ export const whitelist = [
     `${Constants.INDEED}${Constants.INDEED_JOBS_L}`,
     `${Constants.INDEED}${Constants.INDEED_JOBS_Q}`,
     `${Constants.INDEED}${Constants.INDEED_JOBSEEKER}`,
+    `${Constants.GD}${Constants.GD_JOBS}`,
 ]

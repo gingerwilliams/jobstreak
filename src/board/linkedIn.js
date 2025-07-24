@@ -29,7 +29,7 @@ export const linkedIn = () => {
                 status,
                 company,
                 location,
-                type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? 'Unknown',
+                type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? '',
                 url: LI + "/jobs/view/" + id
             };
         });
@@ -55,7 +55,7 @@ export const linkedIn = () => {
                 createdAt,
                 status,
                 location,
-                type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? 'Unknown',
+                type: jobTypeFilter.find(type => jobTypeText.includes(type)) ?? '',
                 url: LI + "/jobs/view/" + id
             };
         });
