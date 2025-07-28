@@ -12,7 +12,8 @@ export default {
   host_permissions: [
     'https://*.linkedin.com/*',
     'https://*.indeed.com/*',
-    'https://*.glassdoor.com/*'
+    'https://*.glassdoor.com/*',
+    'https://*.ziprecruiter.com/*'
   ],
   action: {
     default_popup: 'index.html',
@@ -24,7 +25,8 @@ export default {
   },
   content_scripts: [
     {
-      matches: ['*://*.linkedin.com/*', '*://*.indeed.com/*', '*://*.glassdoor.com/*'],
+      matches: [
+        '*://*.linkedin.com/*', '*://*.indeed.com/*', '*://*.glassdoor.com/*', 'https://*.ziprecruiter.com/*'],
       js: ['src/contentScript.js'],
       run_at: 'document_idle',
     },

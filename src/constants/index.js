@@ -13,10 +13,9 @@ const Constants =  {
 
     GD: "https://www.glassdoor.com",
     GD_JOBS: "/Job/",
-    //entitlement
-    // NDF_ADMIN_ENTITLEMENT = "NDF_BLOTTER_ADMIN",
-    
-    // UNIQUE_KEY = "tradeId",
+
+    ZIP: "https://www.ziprecruiter.com",
+    ZIP_JOBS: "/jobs-search?",
 }
 
 export default Constants
@@ -30,4 +29,5 @@ export const whitelist = [
     `${Constants.INDEED}${Constants.INDEED_JOBS_Q}`,
     `${Constants.INDEED}${Constants.INDEED_JOBSEEKER}`,
     `${Constants.GD}${Constants.GD_JOBS}`,
+    `${Constants.ZIP}${Constants.ZIP_JOBS}`,
 ]

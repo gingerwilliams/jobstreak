@@ -1,10 +1,9 @@
-import { createDate } from "../utils/index.js";
 import { glassdoor } from "./glassdoor";
 import { indeed } from "./indeed";
 import { linkedIn } from "./linkedIn";
+import { zipRecruiter } from "./zip";
 /**
- * Glassdoor
- * ZipRecruiter
+ * Dice
  * Wellfound (formerly AngelList)
  * Greenhouse, Lever
  * RemoteOK,
@@ -19,7 +18,8 @@ export const jobBoard = () => {
     const jobBoardUrls = {
         "www.linkedin.com": linkedIn,
         "www.indeed.com": indeed,
-        "www.glassdoor.com": glassdoor
+        "www.glassdoor.com": glassdoor,
+        "www.ziprecruiter.com": zipRecruiter
     };
 
     return jobBoardUrls[hostname];
