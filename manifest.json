@@ -13,7 +13,8 @@
             "https://www.linkedin.com/*",
             "https://www.indeed.com/*",
             "https://www.glassdoor.com/*",
-            "https://*.ziprecruiter.com/*"
+            "https://*.ziprecruiter.com/*",
+            "https://*.dice.com/*"
         ],
         "js": ["contentScript.js"]
     }

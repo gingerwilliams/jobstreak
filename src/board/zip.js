@@ -8,7 +8,7 @@ export const zipRecruiter = () => {
     const condition = window.document.documentURI.includes(`${ZIP}${ZIP_JOBS}`)
 
     const selectors = {
-        id:"id",
+        id: (el) => el.getAttribute("id"),
         jobSelector:'[class*="job_result_two_pane"]',
         title:'h2 button',
         company:'[data-testid*="job-card-company"]',
@@ -20,5 +20,5 @@ export const zipRecruiter = () => {
         }
     };
 
-    return scrapeJobs(condition, selectors)
+    return scrapeJobs(selectors)
 }

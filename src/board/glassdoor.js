@@ -8,7 +8,7 @@ export const glassdoor = () => {
     const condition = window.document.documentURI.includes(`${GD}${GD_JOBS}`)
 
     const selectors = {
-        id:"data-jobid",
+        id: (el) => el.getAttribute("selectors.id"),
         jobSelector:'[class*="JobsList_jobListItem"]',
         title:'[class*="JobCard_jobTitle"]',
         company:'[class*="EmployerProfile_compactEmployerName"]',
@@ -18,5 +18,5 @@ export const glassdoor = () => {
         },
     };
 
-    return scrapeJobs(condition, selectors)
+    return scrapeJobs(selectors)
 }

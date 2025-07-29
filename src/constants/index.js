@@ -16,6 +16,10 @@ const Constants =  {
 
     ZIP: "https://www.ziprecruiter.com",
     ZIP_JOBS: "/jobs-search?",
+
+    DICE: "https://www.dice.com",
+    DICE_JOBS: "/jobs",
+    DICE_RECCOMMENDED: "/jobs/recommended-jobs",
 }
 
 export default Constants
@@ -30,4 +34,6 @@ export const whitelist = [
     `${Constants.INDEED}${Constants.INDEED_JOBSEEKER}`,
     `${Constants.GD}${Constants.GD_JOBS}`,
     `${Constants.ZIP}${Constants.ZIP_JOBS}`,
+    `${Constants.DICE}${Constants.DICE_JOBS}`,
+    `${Constants.DICE}${Constants.DICE_RECCOMMENDED}`
 ]

@@ -1,9 +1,9 @@
+import { dice } from "./dice";
 import { glassdoor } from "./glassdoor";
 import { indeed } from "./indeed";
 import { linkedIn } from "./linkedIn";
 import { zipRecruiter } from "./zip";
 /**
- * Dice
  * Wellfound (formerly AngelList)
  * Greenhouse, Lever
  * RemoteOK,
@@ -16,9 +16,10 @@ export const jobBoard = () => {
     const hostname = window.document.location.hostname;
     
     const jobBoardUrls = {
-        "www.linkedin.com": linkedIn,
-        "www.indeed.com": indeed,
+        "www.dice.com": dice,
         "www.glassdoor.com": glassdoor,
+        "www.indeed.com": indeed,
+        "www.linkedin.com": linkedIn,
         "www.ziprecruiter.com": zipRecruiter
     };
 
