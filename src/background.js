@@ -11,6 +11,14 @@ chrome.runtime.onInstalled.addListener(() => {
     contexts: ['page', 'selection'],
     visible: true, // Default visible
   });
+
+  chrome.tabs.query({}, (tabs) => {
+    for (const tab of tabs) {
+      if (tab.url && isWhitelisted(tab.url)) {
+        chrome.tabs.reload(tab.id);
+      }
+    }
+  });
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {

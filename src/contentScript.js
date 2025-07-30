@@ -1,5 +1,3 @@
-// import { linkedIn } from "./board/linkedIn";
-// import { indeed } from "./board/indeed";
 import { jobBoard } from "./board/index.js";
 
 console.log("JobStreak content script loaded");
@@ -25,13 +23,15 @@ function captureJobListings() {
 				console.log(`Saved ${jobs.length} new job(s), total: ${appendJobs.length}`);
 			});
     	});
+		return true;
   	}
+	return false;
 }
 
 // "Save Job to JobStreak" sent messege
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'extractAndSaveJob') {
     captureJobListings();
-    sendResponse({ status: 'success' });
+    sendResponse({ status: 'initiated' });
   }
 });
