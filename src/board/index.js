@@ -3,8 +3,8 @@ import { glassdoor } from "./glassdoor";
 import { indeed } from "./indeed";
 import { linkedIn } from "./linkedIn";
 import { zipRecruiter } from "./zip";
+import { wellfound } from "./wellfound";
 /**
- * Wellfound (formerly AngelList)
  * Greenhouse, Lever
  * RemoteOK,
  * Robert Half
@@ -20,7 +20,8 @@ export const jobBoard = () => {
         "www.glassdoor.com": glassdoor,
         "www.indeed.com": indeed,
         "www.linkedin.com": linkedIn,
-        "www.ziprecruiter.com": zipRecruiter
+        "www.ziprecruiter.com": zipRecruiter,
+        "wellfound.com": wellfound
     };
 
     return jobBoardUrls[hostname];

@@ -2,19 +2,22 @@ export default {
   manifest_version: 3,
   name: 'JobStreak',
   description: 'Track and manage your job applications directly from job boards.',
-  version: '1.1',
+  version: '1.5',
   permissions: [
     'storage',
     'tabs',
     'activeTab',
-    'contextMenus'
+    'contextMenus',
+    'webNavigation'
   ],
   host_permissions: [
     'https://*.linkedin.com/*',
     'https://*.indeed.com/*',
     'https://*.glassdoor.com/*',
     'https://*.ziprecruiter.com/*',
-    'https://*.dice.com/*'
+    'https://*.dice.com/*',
+    'https://*.wellfound.com/*',
+    "https://wellfound.com/*"
   ],
   action: {
     default_popup: 'index.html',
@@ -27,7 +30,14 @@ export default {
   content_scripts: [
     {
       matches: [
-        '*://*.linkedin.com/*', '*://*.indeed.com/*', '*://*.glassdoor.com/*', 'https://*.ziprecruiter.com/*', '*://*.dice.com/*',],
+        '*://*.linkedin.com/*',
+        '*://*.indeed.com/*',
+        '*://*.glassdoor.com/*',
+        'https://*.ziprecruiter.com/*',
+        '*://*.dice.com/*',
+        '*://*.wellfound.com/*',
+        'https://wellfound.com/*'
+      ],
       js: ['src/contentScript.js'],
       run_at: 'document_idle',
     },

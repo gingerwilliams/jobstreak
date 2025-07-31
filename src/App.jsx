@@ -21,7 +21,27 @@ function App() {
 			// backgroundColor: 'darkwarm',
 			accentColor: 'gray',
 		});
+	
+	const onCellValueChanged = useCallback((event) => {
+		const { data, colDef } = event;
 
+		console.log("EVENT: ", event)
+		console.log("EVENT: ", event)
+
+		if (colDef.field === "status") {
+			chrome.storage.local.get(["jobStreak"], (result) => {
+				const currentJobs = result.jobStreak || [];
+
+				const updatedJobs = currentJobs.map((job) =>
+					job.id === data.id ? { ...job, status: data.status } : job
+				);
+
+				chrome.storage.local.set({ jobStreak: updatedJobs }, () => {
+					console.log(`Status updated for job id ${data.id}`);
+				});
+			});
+		}
+	},[]);
 
 	const handleClearJobs = () => {
 		chrome.storage.local.remove("jobStreak", () => {
@@ -67,6 +87,7 @@ function App() {
 					rowData={jobs}
 					columnDefs={Columns}
 					onGridReady={onGridReady}
+					onCellValueChanged={onCellValueChanged}
 					theme={myTheme}
 					//   defaultColDef={{ resizable: true, sortable: true, filter: true }}
 					domLayout="autoHeight"
