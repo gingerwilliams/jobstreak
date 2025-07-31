@@ -8,7 +8,6 @@ export const wellfound = () => {
         id: (el) => {
             const jobEndpoint = el.querySelector('[class*="styles_jobLink"]').getAttribute("href");
             const slice = jobEndpoint.slice(jobEndpoint.lastIndexOf('/') + 1)
-            console.log(`Wellfound ID: ${slice}`);
             return slice;
 
         },

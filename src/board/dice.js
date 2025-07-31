@@ -13,7 +13,6 @@ export const dice = () => {
         id: (el) => {
             const url = el.querySelector('a').getAttribute('href');
             const id = url.slice(url.lastIndexOf('/') + 1);
-            console.log(`Dice ID: ${id}`);
             return id;
         },
         jobSelector:'[role*="listitem"]',
@@ -22,7 +21,6 @@ export const dice = () => {
         location:'.content > span > div > div:first-child p',
         url: (el) => {
             const url =  el.querySelector('a').getAttribute('href');
-            console.log(`Dice URL: ${url}`);
             return url
         }
     };

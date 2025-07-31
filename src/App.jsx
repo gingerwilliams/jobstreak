@@ -25,9 +25,6 @@ function App() {
 	const onCellValueChanged = useCallback((event) => {
 		const { data, colDef } = event;
 
-		console.log("EVENT: ", event)
-		console.log("EVENT: ", event)
-
 		if (colDef.field === "status") {
 			chrome.storage.local.get(["jobStreak"], (result) => {
 				const currentJobs = result.jobStreak || [];
