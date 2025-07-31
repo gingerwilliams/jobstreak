@@ -7,8 +7,7 @@ export default {
     'storage',
     'tabs',
     'activeTab',
-    'contextMenus',
-    'webNavigation'
+    'contextMenus'
   ],
   host_permissions: [
     'https://*.linkedin.com/*',

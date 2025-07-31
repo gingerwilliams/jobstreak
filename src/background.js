@@ -6,22 +6,6 @@ function isWhitelisted(url) {
   return whitelist.some(allowed => url.startsWith(allowed));
 }
 
-chrome.webNavigation.onHistoryStateUpdated.addListener((details) => {
-  const url = details.url;
-  console.log("SPA navigation URL:", url);
-
-  if (isWhitelisted(url)) {
-    chrome.contextMenus.update('save-job', { visible: true });
-  } else {
-    chrome.contextMenus.update('save-job', { visible: false });
-  }
-}, {
-  url: [
-    { hostEquals: 'wellfound.com' }, // change from hostSuffix
-    { hostEquals: 'www.wellfound.com' } // just in case they use this
-  ]
-});
-
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'save-job',
