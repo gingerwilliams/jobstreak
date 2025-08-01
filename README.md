@@ -1,5 +1,7 @@
 # Chrome Extension
 
+https://chromewebstore.google.com/search/JobStreak
+
 npm create vite@latest jobstreak-extension 
 cd jobstreak-extension
 npm install @crxjs/vite-plugin
